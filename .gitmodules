@@ -1,0 +1,6 @@
+[submodule "core"]
+	path = core
+	url = https://github.com/PhanManh69/e2music-core.git
+[submodule "main"]
+	path = main
+	url = https://github.com/PhanManh69/e2music-main.git
