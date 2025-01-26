@@ -32,8 +32,6 @@ android {
 }
 
 dependencies {
-    implementation(project(mapOf("path" to ":core:common")))
-
     implementation(vc.bundleAndroidCore)
     implementation(vc.bundleKoin)
     implementation(vc.kotlinxSerializationJson)

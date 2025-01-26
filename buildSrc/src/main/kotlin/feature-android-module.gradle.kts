@@ -16,9 +16,6 @@ android {
 
 dependencies {
     implementation(project(mapOf("path" to ":core:ui")))
-    implementation(project(mapOf("path" to ":core:common")))
-//    implementation(project(mapOf("path" to ":datasource")))
-//    implementation(project(mapOf("path" to ":shared:domain")))
 
     // Compose dependencies
     implementation(platform(vc.composeBom))

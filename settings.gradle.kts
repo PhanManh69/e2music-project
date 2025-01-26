@@ -25,3 +25,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "E2Music"
 include(":app")
+include(":core:ui")
+include(":main")
+include(":account")

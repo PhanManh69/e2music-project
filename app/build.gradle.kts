@@ -97,4 +97,11 @@ dependencies {
     // Preview
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // Shared dependencies
+    implementation(project(mapOf("path" to ":core:ui")))
+
+    // Feature dependencies
+    implementation(project(mapOf("path" to ":main")))
+    implementation(project(mapOf("path" to ":account")))
 }

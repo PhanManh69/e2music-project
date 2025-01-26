@@ -29,9 +29,9 @@ android {
 }
 
 dependencies {
+    implementation(project(mapOf("path" to ":core:ui")))
+
     implementation(vc.kotlinCoroutinesAndroid)
     implementation(vc.bundleRetrofitNetwork)
     implementation(vc.bundleKoin)
-
-    implementation(project(mapOf("path" to ":core:ui")))
 }

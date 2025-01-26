@@ -23,8 +23,6 @@ android {
 }
 
 dependencies {
-    implementation(project(mapOf("path" to ":core:common")))
-
     // Test dependencies
     testImplementation(vc.jUnit)
     androidTestImplementation(vc.androidxJunit)
