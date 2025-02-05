@@ -7,6 +7,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.mobile.e2m.account.navigation.accountDestination
 import com.mobile.e2m.core.ui.navigation.route.DestinationNavigator.APP_NAVIGATOR
 import com.mobile.e2m.core.ui.navigation.Navigator
 import com.mobile.e2m.core.ui.navigation.route.DestinationRoute
@@ -34,7 +35,7 @@ fun RootNavScreen(
 
     NavHost(
         navController = navController,
-        startDestination = DestinationRoute.MainRoute.ROOT,
+        startDestination = DestinationRoute.AccountRoute.ROOT,
         enterTransition = {
             slideIntoContainer(
                 AnimatedContentTransitionScope.SlideDirection.Start, tween(600),
@@ -57,5 +58,6 @@ fun RootNavScreen(
         },
     ) {
         mainDestination()
+        accountDestination()
     }
 }
