@@ -16,6 +16,7 @@ android {
 
 dependencies {
     implementation(project(mapOf("path" to ":core:ui")))
+    implementation(project(mapOf("path" to ":core:datasource")))
 
     // Compose dependencies
     implementation(platform(vc.composeBom))
@@ -29,4 +30,7 @@ dependencies {
     testImplementation(vc.jUnit)
     androidTestImplementation(vc.androidxJunit)
     androidTestImplementation(platform(vc.composeBom))
+
+    // Send mail
+    implementation(vc.bundleSumMail)
 }

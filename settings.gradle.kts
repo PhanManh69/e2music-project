@@ -26,5 +26,8 @@ dependencyResolutionManagement {
 rootProject.name = "E2Music"
 include(":app")
 include(":core:ui")
+include(":core:datasource")
 include(":main")
 include(":account")
+include(":dashboard-domain:dashboard")
+include(":dashboard-domain:home")

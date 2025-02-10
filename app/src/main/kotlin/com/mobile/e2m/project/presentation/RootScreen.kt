@@ -3,38 +3,31 @@ package com.mobile.e2m.project.presentation
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.DisposableEffect
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.mobile.e2m.core.ui.navigation.route.DestinationNavigator.APP_NAVIGATOR
-import com.mobile.e2m.core.ui.navigation.Navigator
-import com.mobile.e2m.core.ui.navigation.route.DestinationRoute
+import com.mobile.e2m.account.navigation.accountDestination
+import com.mobile.e2m.core.ui.navigation.route.AppNavigationRoute
 import com.mobile.e2m.main.navigation.mainDestination
-import kotlinx.coroutines.flow.collectLatest
+import com.mobile.e2m.project.router.AppRouter
 import org.koin.compose.koinInject
-import org.koin.core.qualifier.named
 
 @Composable
 fun RootNavScreen(
     navController: NavHostController = rememberNavController(),
-    navigator: Navigator = koinInject(named(APP_NAVIGATOR)),
+    appRouter: AppRouter = koinInject(),
 ) {
-    LaunchedEffect(Unit) {
-        navigator.actions.collectLatest { action ->
-            when (action) {
-                Navigator.Action.Back -> navController.popBackStack()
-                is Navigator.Action.Navigate -> navController.navigate(
-                    route = action.destination,
-                    builder = action.navOptions
-                )
-            }
+    DisposableEffect(navController) {
+        appRouter.bind(navController)
+        onDispose {
+            appRouter.unbind()
         }
     }
 
     NavHost(
         navController = navController,
-        startDestination = DestinationRoute.MainRoute.ROOT,
+        startDestination = AppNavigationRoute.Account,
         enterTransition = {
             slideIntoContainer(
                 AnimatedContentTransitionScope.SlideDirection.Start, tween(600),
@@ -56,6 +49,7 @@ fun RootNavScreen(
             )
         },
     ) {
+        accountDestination()
         mainDestination()
     }
 }
