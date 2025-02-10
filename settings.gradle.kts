@@ -1,5 +1,11 @@
 @file:Suppress("UnstableApiUsage")
 
+include(":dashboard-domain:home")
+
+
+include(":dashboard-domain:dashboard")
+
+
 
 pluginManagement {
     repositories {
