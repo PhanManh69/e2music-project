@@ -26,6 +26,9 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/datasource" />
             <option value="$PROJECT_DIR$/core/ui" />
+            <option value="$PROJECT_DIR$/dashboard-domain" />
+            <option value="$PROJECT_DIR$/dashboard-domain/dashboard" />
+            <option value="$PROJECT_DIR$/dashboard-domain/home" />
             <option value="$PROJECT_DIR$/main" />
           </set>
         </option>
