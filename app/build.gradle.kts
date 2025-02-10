@@ -112,4 +112,6 @@ dependencies {
     // Feature dependencies
     implementation(project(mapOf("path" to ":main")))
     implementation(project(mapOf("path" to ":account")))
+    implementation(project(mapOf("path" to ":dashboard-domain:dashboard")))
+    implementation(project(mapOf("path" to ":dashboard-domain:home")))
 }
