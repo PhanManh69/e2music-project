@@ -4,6 +4,7 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/account" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/core" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/dashboard-domain" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/main" vcs="Git" />
   </component>
 </project>

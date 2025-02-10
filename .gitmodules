@@ -7,6 +7,3 @@
 [submodule "account"]
 	path = account
 	url = https://github.com/PhanManh69/e2music-account.git
-[submodule "dashboard-domain"]
-	path = dashboard-domain
-	url = git@github.com:PhanManh69/e2music-dashboard-domain.git
