@@ -70,6 +70,12 @@ val VersionCatalog.kotlinCoroutinesAndroid: Provider<MinimalExternalModuleDepend
 val VersionCatalog.androidxUiTooling: Provider<MinimalExternalModuleDependency>
     get() = findLibraryOrThrow("androidx-ui-tooling")
 
+val VersionCatalog.roomKtx: Provider<MinimalExternalModuleDependency>
+    get() = findLibraryOrThrow("room-ktx")
+
+val VersionCatalog.roomCompiler: Provider<MinimalExternalModuleDependency>
+    get() = findLibraryOrThrow("room-compiler")
+
 // Bundle
 val VersionCatalog.bundleAndroidCore: Provider<ExternalModuleDependencyBundle>
     get() = findBundleOrThrow("android-core")
@@ -88,3 +94,6 @@ val VersionCatalog.bundleCoilKt: Provider<ExternalModuleDependencyBundle>
 
 val VersionCatalog.bundleMoshi: Provider<ExternalModuleDependencyBundle>
     get() = findBundleOrThrow("moshi-bundle")
+
+val VersionCatalog.bundleSumMail: Provider<ExternalModuleDependencyBundle>
+    get() = findBundleOrThrow("sum-mail")

@@ -1,6 +1,6 @@
 [versions]
 agp = "8.0.1"
-kotlin = "1.8.22"
+kotlin = "1.9.25"
 gradle = "8.1.4"
 coreKtx = "1.10.1"
 junit = "4.13.2"
@@ -8,13 +8,14 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 kotlinGradlePlugin = "1.9.25"
 kotlinxCoroutinesAndroid = "1.7.3"
+ktlintGradle = "12.1.2"
 lifecycleRuntimeKtx = "2.8.6"
 activityCompose = "1.9.3"
 composeBom = "2024.04.01"
 appcompat = "1.7.0"
 material = "1.12.0"
 material3 = "1.3.1"
-navigationCompose = "2.7.1"
+navigationCompose = "2.8.5"
 constraintLayoutCompose = "1.0.1"
 androidxConstraintLayout = "2.1.4"
 androidxNavigation = "2.6.0"
@@ -27,10 +28,13 @@ kotlinxSerializationJson = "1.6.3"
 kotlinxCollectionsImmutable = "0.3.5"
 moshi = "1.15.1"
 coil3 = "3.0.4"
+room = "2.6.1"
+androidmail = "1.6.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 build-gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
+ktlint-gradle = { module = "org.jlleitschuh.gradle:ktlint-gradle", version.ref = "ktlintGradle" }
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -64,6 +68,7 @@ koin-compose-navigation = { group = "io.insert-koin", name = "koin-androidx-comp
 okhttp3 = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp3" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-converter-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit" }
+kotlin-plugin-serialization = { module = "org.jetbrains.kotlin.plugin.serialization:org.jetbrains.kotlin.plugin.serialization.gradle.plugin", version.ref = "kotlin" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 kotlinx-collections-immutable = { group = "org.jetbrains.kotlinx", name = "kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutable" }
 moshi-kotlin = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "moshi" }
@@ -73,6 +78,10 @@ coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref 
 coil-network-okhttp = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coil3" }
 coil-svg = { group = "io.coil-kt.coil3", name = "coil-svg", version.ref = "coil3" }
 coil-gif = { group = "io.coil-kt.coil3", name = "coil-gif", version.ref = "coil3" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+com-sun-mail = { group = "com.sun.mail", name = "android-mail", version.ref = "androidmail" }
+com-sun-activation = { group = "com.sun.mail", name = "android-activation", version.ref = "androidmail" }
 
 [bundles]
 android-core = [
@@ -117,5 +126,7 @@ retrofit-network = [
     "retrofit-converter-moshi",
 ]
 
-[plugins]
-navigation-safe-args = { id = "androidx.navigation.safeargs.kotlin", version.ref = "androidxNavigation" }
+sum-mail = [
+    "com-sun-mail",
+    "com-sun-activation"
+]
