@@ -9,6 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.mobile.e2m.account.navigation.accountDestination
 import com.mobile.e2m.core.ui.navigation.route.AppNavigationRoute
+import com.mobile.e2m.dashboard.navigation.dashboardDestination
 import com.mobile.e2m.main.navigation.mainDestination
 import com.mobile.e2m.project.router.AppRouter
 import org.koin.compose.koinInject
@@ -27,7 +28,7 @@ fun RootNavScreen(
 
     NavHost(
         navController = navController,
-        startDestination = AppNavigationRoute.Account,
+        startDestination = AppNavigationRoute.Dashboard,
         enterTransition = {
             slideIntoContainer(
                 AnimatedContentTransitionScope.SlideDirection.Start, tween(600),
@@ -51,5 +52,6 @@ fun RootNavScreen(
     ) {
         accountDestination()
         mainDestination()
+        dashboardDestination()
     }
 }

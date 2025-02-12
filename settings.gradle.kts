@@ -1,11 +1,5 @@
 @file:Suppress("UnstableApiUsage")
 
-include(":dashboard-domain:home")
-
-
-include(":dashboard-domain:dashboard")
-
-
 
 pluginManagement {
     repositories {
@@ -37,3 +31,5 @@ include(":main")
 include(":account")
 include(":dashboard-domain:dashboard")
 include(":dashboard-domain:home")
+include(":dashboard-domain:music")
+include(":dashboard-domain:profile")
