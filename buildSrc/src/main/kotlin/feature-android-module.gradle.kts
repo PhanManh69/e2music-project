@@ -18,6 +18,8 @@ dependencies {
     implementation(project(mapOf("path" to ":core:ui")))
     implementation(project(mapOf("path" to ":core:datasource")))
 
+    implementation(vc.kotlinxCollectionsImmutable)
+
     // Compose dependencies
     implementation(platform(vc.composeBom))
     implementation(vc.bundleCompose)

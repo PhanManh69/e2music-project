@@ -10,3 +10,6 @@
 [submodule "dashboard-domain"]
 	path = dashboard-domain
 	url = https://github.com/PhanManh69/e2music-dashboard-domain.git
+[submodule "daily"]
+	path = daily
+	url = https://github.com/PhanManh69/e2music-daily.git
