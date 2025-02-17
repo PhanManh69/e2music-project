@@ -29,6 +29,8 @@
             <option value="$PROJECT_DIR$/dashboard-domain" />
             <option value="$PROJECT_DIR$/dashboard-domain/dashboard" />
             <option value="$PROJECT_DIR$/dashboard-domain/home" />
+            <option value="$PROJECT_DIR$/dashboard-domain/music" />
+            <option value="$PROJECT_DIR$/dashboard-domain/profile" />
             <option value="$PROJECT_DIR$/main" />
           </set>
         </option>
