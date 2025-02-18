@@ -1,7 +1,9 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    id(libs.plugins.navigation.safe.args.get().pluginId)
+    id("org.jetbrains.kotlin.plugin.serialization")
+    id("androidx.navigation.safeargs")
+    kotlin("kapt")
 }
 
 android {
@@ -9,7 +11,7 @@ android {
     compileSdk = AppConfig.COMPILE_SDK
 
     defaultConfig {
-        applicationId = "com.mobile.e2m.project"
+        applicationId = AppConfig.APP_ID
         minSdk = AppConfig.MIN_SDK
         targetSdk = AppConfig.TARGET_SDK
         versionCode = 1
@@ -50,6 +52,7 @@ android {
     packaging {
         resources.excludes.addAll(
             listOf(
+                "META-INF/gradle/incremental.annotation.processors",
                 "META-INF/core_release.kotlin_module",
                 "META-INF/AL2.0",
                 "META-INF/LGPL2.1",
@@ -98,10 +101,20 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    // Room
+    implementation(libs.room.ktx)
+    kapt(libs.room.compiler)
+
     // Shared dependencies
     implementation(project(mapOf("path" to ":core:ui")))
+    implementation(project(mapOf("path" to ":core:datasource")))
 
     // Feature dependencies
     implementation(project(mapOf("path" to ":main")))
     implementation(project(mapOf("path" to ":account")))
+    implementation(project(mapOf("path" to ":dashboard-domain:dashboard")))
+    implementation(project(mapOf("path" to ":dashboard-domain:home")))
+    implementation(project(mapOf("path" to ":dashboard-domain:music")))
+    implementation(project(mapOf("path" to ":dashboard-domain:profile")))
+    implementation(project(mapOf("path" to ":daily:playmusic")))
 }
