@@ -11,6 +11,7 @@ import com.mobile.e2m.account.navigation.accountDestination
 import com.mobile.e2m.core.ui.navigation.route.AppNavigationRoute
 import com.mobile.e2m.dashboard.navigation.dashboardDestination
 import com.mobile.e2m.main.navigation.mainDestination
+import com.mobile.e2m.menu.navigation.menuRootNavGraph
 import com.mobile.e2m.project.router.AppRouter
 import org.koin.compose.koinInject
 
@@ -53,5 +54,8 @@ fun RootNavScreen(
         accountDestination()
         mainDestination()
         dashboardDestination()
+        menuRootNavGraph(
+            navController = navController
+        )
     }
 }
