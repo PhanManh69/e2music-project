@@ -1,5 +1,7 @@
 package com.mobile.e2m.project.di
 
+import android.content.Context
+import android.content.SharedPreferences
 import com.mobile.e2m.account.router.AccountRouter
 import com.mobile.e2m.dashboard.router.DashboardRouter
 import com.mobile.e2m.project.router.AccountRouterImpl
@@ -9,8 +11,11 @@ import com.mobile.e2m.project.router.DashboardRouterImpl
 import org.koin.dsl.bind
 import org.koin.dsl.module
 
-val mainAppModel = module {
+val mainAppModule = module {
     single { AppRouterImpl() } bind AppRouter::class
-    factory { AccountRouterImpl(get()) } bind AccountRouter::class
-    factory { DashboardRouterImpl(get()) } bind DashboardRouter::class
+    single<SharedPreferences> {
+        get<Context>().getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
+    }
+    factory { AccountRouterImpl(get(), get()) } bind AccountRouter::class
+    factory { DashboardRouterImpl(get(), get()) } bind DashboardRouter::class
 }

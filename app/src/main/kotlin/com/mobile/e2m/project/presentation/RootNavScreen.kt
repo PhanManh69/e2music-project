@@ -1,9 +1,11 @@
 package com.mobile.e2m.project.presentation
 
+import android.content.Context
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
@@ -20,6 +22,10 @@ fun RootNavScreen(
     navController: NavHostController = rememberNavController(),
     appRouter: AppRouter = koinInject(),
 ) {
+    val context = LocalContext.current
+    val preferences = context.getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
+    val isLoggedIn = preferences.getBoolean("IS_LOGGED_IN", false)
+
     DisposableEffect(navController) {
         appRouter.bind(navController)
         onDispose {
@@ -29,7 +35,7 @@ fun RootNavScreen(
 
     NavHost(
         navController = navController,
-        startDestination = AppNavigationRoute.Dashboard,
+        startDestination = if (isLoggedIn) AppNavigationRoute.Dashboard else AppNavigationRoute.Account,
         enterTransition = {
             slideIntoContainer(
                 AnimatedContentTransitionScope.SlideDirection.Start, tween(600),
