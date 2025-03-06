@@ -1,7 +1,6 @@
 [versions]
-agp = "8.0.1"
 kotlin = "1.9.25"
-gradle = "8.1.4"
+gradle = "8.3.0"
 coreKtx = "1.10.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -21,7 +20,6 @@ androidxConstraintLayout = "2.1.4"
 androidxNavigation = "2.6.0"
 androidxFragment = "1.5.7"
 koin = "3.5.0"
-coroutinesTest = "1.6.4"
 okhttp3 = "4.11.0"
 retrofit = "2.9.0"
 kotlinxSerializationJson = "1.6.3"
@@ -30,6 +28,14 @@ moshi = "1.15.1"
 coil3 = "3.0.4"
 room = "2.6.1"
 androidmail = "1.6.7"
+media = "1.7.0"
+glide = "4.16.0"
+media3 = "1.5.0"
+googleServices = "4.4.2"
+firebaseBom = "32.5.0"
+concurrent = "1.2.0"
+kotlinx = "1.7.3"
+agpVersion = "8.1.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -62,7 +68,6 @@ androidx-navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", ver
 androidx-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
 navigation-safe-args-gradle-plugin = { group = "androidx.navigation", name = "navigation-safe-args-gradle-plugin", version.ref = "androidxNavigation" }
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
-koin-android-viewmodel = { group = "io.insert-koin", name = "koin-android-viewmodel", version.ref = "koin" }
 koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
 koin-compose-navigation = { group = "io.insert-koin", name = "koin-androidx-compose-navigation", version.ref = "koin" }
 okhttp3 = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp3" }
@@ -82,6 +87,23 @@ room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 com-sun-mail = { group = "com.sun.mail", name = "android-mail", version.ref = "androidmail" }
 com-sun-activation = { group = "com.sun.mail", name = "android-activation", version.ref = "androidmail" }
+androidx-media = { group = "androidx.media", name = "media", version.ref = "media" }
+com-github-bumptech-glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+androidx-media3-exoplayer = { group = "androidx.media3", name = "media3-exoplayer", version.ref = "media3" }
+androidx-media3-exoplayer-dash = { group = "androidx.media3", name = "media3-exoplayer-dash", version.ref = "media3" }
+androidx-media3-ui = { group = "androidx.media3", name = "media3-ui", version.ref = "media3" }
+androidx-media3-session = { group = "androidx.media3", name = "media3-session", version.ref = "media3" }
+androidx-media3-common = { group = "androidx.media3", name = "media3-common", version.ref = "media3" }
+google-services = { module = "com.google.gms:google-services", version.ref = "googleServices" }
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx" }
+firebase-analytics-ktx = { group = "com.google.firebase", name = "firebase-analytics-ktx" }
+firebase-database-ktx = { group = "com.google.firebase", name = "firebase-database-ktx" }
+androidx-concurrent-futures-ktx = { group = "androidx.concurrent", name = "concurrent-futures-ktx", version.ref = "concurrent" }
+org-jetbrains-kotlinx-coroutines-guava = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-guava", version.ref = "kotlinx" }
+
+[plugins]
+android-library = { id = "com.android.library", version.ref = "agpVersion" }
 
 [bundles]
 android-core = [
@@ -104,13 +126,13 @@ compose = [
 koin = [
     "koin-android",
     "koin-compose",
-    "koin-compose-navigation"
+    "koin-compose-navigation",
 ]
 
 moshi-bundle = [
     "moshi-kotlin",
     "moshi-adapter",
-    "moshi-codegen"
+    "moshi-codegen",
 ]
 
 coil-kt = [
@@ -128,5 +150,20 @@ retrofit-network = [
 
 sum-mail = [
     "com-sun-mail",
-    "com-sun-activation"
+    "com-sun-activation",
+]
+
+firebase = [
+    "firebase-firestore-ktx",
+    "firebase-analytics-ktx",
+    "firebase-database-ktx",
+]
+
+exo-player = [
+    "androidx-media",
+    "androidx-media3-exoplayer",
+    "androidx-media3-exoplayer-dash",
+    "androidx-media3-ui",
+    "androidx-media3-session",
+    "androidx-media3-common",
 ]

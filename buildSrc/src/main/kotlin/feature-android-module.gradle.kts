@@ -15,6 +15,7 @@ android {
 }
 
 dependencies {
+    implementation(project(mapOf("path" to ":core:service")))
     implementation(project(mapOf("path" to ":core:ui")))
     implementation(project(mapOf("path" to ":core:datasource")))
 

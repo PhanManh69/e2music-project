@@ -3,12 +3,14 @@ plugins {
     id("kotlin-android")
     id("org.jetbrains.kotlin.plugin.serialization")
     id("androidx.navigation.safeargs")
+    id("kotlin-parcelize")
+    id("com.google.gms.google-services")
     kotlin("kapt")
 }
 
 android {
     namespace = "com.mobile.e2m.project"
-    compileSdk = AppConfig.COMPILE_SDK
+    compileSdk = 35
 
     defaultConfig {
         applicationId = AppConfig.APP_ID
@@ -84,11 +86,18 @@ dependencies {
     implementation(libs.material)
     implementation(libs.bundles.koin)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.collections.immutable)
+    implementation(libs.com.github.bumptech.glide)
 
     // Compose dependencies
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose)
     implementation(libs.androidx.material3)
+    implementation(libs.bundles.exo.player)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.analytics.ktx)
+    implementation(libs.androidx.concurrent.futures.ktx)
 
     // Test dependencies
     testImplementation(libs.junit)
@@ -108,6 +117,7 @@ dependencies {
     // Shared dependencies
     implementation(project(mapOf("path" to ":core:ui")))
     implementation(project(mapOf("path" to ":core:datasource")))
+    implementation(project(mapOf("path" to ":core:service")))
 
     // Feature dependencies
     implementation(project(mapOf("path" to ":main")))
@@ -117,4 +127,5 @@ dependencies {
     implementation(project(mapOf("path" to ":dashboard-domain:music")))
     implementation(project(mapOf("path" to ":dashboard-domain:profile")))
     implementation(project(mapOf("path" to ":daily:playmusic")))
+    implementation(project(mapOf("path" to ":daily:menu")))
 }
