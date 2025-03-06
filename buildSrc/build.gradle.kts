@@ -15,4 +15,5 @@ dependencies {
     implementation(libs.kotlin.plugin.serialization)
     implementation(libs.navigation.safe.args.gradle.plugin)
     implementation(libs.ktlint.gradle)
+    implementation(libs.google.services)
 }

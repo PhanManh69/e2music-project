@@ -15,6 +15,7 @@ import androidx.core.content.ContextCompat
 import com.mobile.e2m.core.ui.theme.E2MusicTheme
 import com.mobile.e2m.core.ui.R
 
+@androidx.media3.common.util.UnstableApi
 class AppActivity : ComponentActivity() {
     private val notificationPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
@@ -26,6 +27,7 @@ class AppActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         setContent {
             E2MusicTheme {
                 RootNavScreen()

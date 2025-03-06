@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "728697628196",
+    "project_id": "e2music",
+    "storage_bucket": "e2music.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728697628196:android:ecdd3aa9853c0561509ab1",
+        "android_client_info": {
+          "package_name": "com.mobile.e2m.demoexoplayer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5mNVuKVOXpPQjGleKyT1o_ASbWuzvMkk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728697628196:android:f07be8f264a178f7509ab1",
+        "android_client_info": {
+          "package_name": "com.mobile.e2m.project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5mNVuKVOXpPQjGleKyT1o_ASbWuzvMkk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

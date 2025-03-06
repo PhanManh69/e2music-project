@@ -31,6 +31,8 @@ android {
 dependencies {
     implementation(project(mapOf("path" to ":core:ui")))
 
+    implementation(vc.kotlinxSerializationJson)
+    implementation(vc.kotlinxCollectionsImmutable)
     implementation(vc.kotlinCoroutinesAndroid)
     implementation(vc.bundleRetrofitNetwork)
     implementation(vc.bundleKoin)

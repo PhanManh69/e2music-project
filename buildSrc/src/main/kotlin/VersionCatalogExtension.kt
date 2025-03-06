@@ -76,6 +76,21 @@ val VersionCatalog.roomKtx: Provider<MinimalExternalModuleDependency>
 val VersionCatalog.roomCompiler: Provider<MinimalExternalModuleDependency>
     get() = findLibraryOrThrow("room-compiler")
 
+val VersionCatalog.concurrentCoroutines: Provider<MinimalExternalModuleDependency>
+    get() = findLibraryOrThrow("org-jetbrains-kotlinx-coroutines-guava")
+
+val VersionCatalog.concurrentFutures: Provider<MinimalExternalModuleDependency>
+    get() = findLibraryOrThrow("androidx-concurrent-futures-ktx")
+
+val VersionCatalog.concurrentDaggerHiltCompiler: Provider<MinimalExternalModuleDependency>
+    get() = findLibraryOrThrow("com-google-dagger-hilt-compiler")
+
+val VersionCatalog.concurrentDaggerHiltAndroid: Provider<MinimalExternalModuleDependency>
+    get() = findLibraryOrThrow("com-google-dagger-hilt-android")
+
+val VersionCatalog.concurrentFirebaseBom: Provider<MinimalExternalModuleDependency>
+    get() = findLibraryOrThrow("firebase-bom")
+
 // Bundle
 val VersionCatalog.bundleAndroidCore: Provider<ExternalModuleDependencyBundle>
     get() = findBundleOrThrow("android-core")
@@ -97,3 +112,9 @@ val VersionCatalog.bundleMoshi: Provider<ExternalModuleDependencyBundle>
 
 val VersionCatalog.bundleSumMail: Provider<ExternalModuleDependencyBundle>
     get() = findBundleOrThrow("sum-mail")
+
+val VersionCatalog.bundleFirebase: Provider<ExternalModuleDependencyBundle>
+    get() = findBundleOrThrow("firebase")
+
+val VersionCatalog.bundleExoPlayer: Provider<ExternalModuleDependencyBundle>
+    get() = findBundleOrThrow("exo-player")

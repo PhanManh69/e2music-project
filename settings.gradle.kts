@@ -1,8 +1,5 @@
 @file:Suppress("UnstableApiUsage")
 
-include(":daily:menu")
-
-
 
 pluginManagement {
     repositories {
@@ -30,6 +27,7 @@ rootProject.name = "E2Music"
 include(":app")
 include(":core:ui")
 include(":core:datasource")
+include(":core:service")
 include(":main")
 include(":account")
 include(":dashboard-domain:dashboard")
